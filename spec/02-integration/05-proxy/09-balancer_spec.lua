@@ -127,7 +127,7 @@ dao_helpers.for_each_dao(function(kong_config)
           slots = 10,
         })
 
-        helpers.start_kong()
+        helpers.start_kong({ ngx_conf = helpers.test_conf_path })
         client = helpers.proxy_client()
         api_client = helpers.admin_client()
       end)
